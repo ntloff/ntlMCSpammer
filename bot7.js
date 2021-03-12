@@ -1,8 +1,15 @@
-﻿const mineflayer = require('mineflayer');
+﻿function sleep(milliseconds) {
+  const date = Date.now();
+  let currentDate = null;
+  do {
+    currentDate = Date.now();
+  } while (currentDate - date < milliseconds);
+}
+const mineflayer = require('mineflayer');
 const host = "minecorp.ru"
 const ver = "1.8"
 const port = "25565"
-const m = "!iIiAnDreYiIi лох"
+const m = "!#РАЗБАН ЛОГОНИСЕР"
 //+config
 const server = "crv" // crv/cls | default: crv (creative)
 //-config
@@ -31,15 +38,15 @@ const bot = mineflayer.createBot({
   version: ver
 })
 bot.once('login', () => {
-  bot.setControlState('jump', true)
   console.log("Ingame bot online!")
-  bot.chat("/l arse")
+  bot.chat("/l sukablat")
   if(server == "crv"){
-  setTimeout(() => { bot.chat("/server creative") }, 1000)
-  setTimeout(() => { bot.chat("/w JienxHax") }, 1000)
+    sleep(2001)
+    bot.chat("/server creative")
   }
   if(server == "cls"){
-  	setTimeout(() => { bot.chat("/server classic") }, 1000)
+    sleep(2001)
+    bot.chat("/server classic")
   }
 })
 bot.on('message', (message) => {
